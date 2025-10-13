@@ -1,0 +1,27 @@
+<style>
+#rec1412300811 {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right:0;
+  bottom:0;
+  z-index: 100005;
+}
+</style>
+<script>
+$("body").css("overflow","hidden");
+$(document).ready(function() {
+    setTimeout(function() {
+        $("#rec1412300811").delay(350).fadeOut('slow'); 
+        $("body").css("overflow","auto");
+        window.dispatchEvent(new Event('resize'));
+    }, 3000);
+});
+$(window).on('load', function () {
+    $("#rec1412300811").delay(350).fadeOut('slow');
+    setTimeout(function() {  
+    $("body").css("overflow","auto"); 
+    window.dispatchEvent(new Event('resize'));    
+    }, 400);
+});
+</script>
