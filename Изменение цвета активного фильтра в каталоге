@@ -1,0 +1,6 @@
+<style>
+/* Цвет текста активного фильтра разделов */
+.t-store__parts-switch-btn.t-active {
+    color: #E62EA7 !important; /* Цвет текста активного фильтра */
+}
+</style>
