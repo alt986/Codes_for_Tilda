@@ -1,0 +1,23 @@
+<a  id="specialButton" href="#"><img src="https://i.postimg.cc/xCQhSHdY/Frame-5120.png" id='glazd' alt="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ" title="ВЕРСИЯ ДЛЯ СЛАБОВИДЯЩИХ"  /></a>
+<style>
+@media screen and (max-width: 980px) {
+    #glazd {
+        position:absolute;
+        top:25px;
+        right:20px;
+        z-index: 99999;
+        width:35px;
+    }
+}
+@media screen and (min-width: 980px) {
+    #glazd {
+        position:absolute;
+        top:24px;
+        left:15px;
+        z-index: 99999;
+        width:40px;
+    }
+}
+
+</style
+>
