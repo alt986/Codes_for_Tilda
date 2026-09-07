@@ -1,0 +1,52 @@
+<!--
+  Автоматическая смена изображения при выборе варианта товара.
+
+  Код связывает варианты товара в каталоге Tilda с фотографиями в галерее:
+  первый вариант показывает первое изображение,
+  второй вариант — второе изображение и т. д.
+
+  Код универсальный: достаточно один раз добавить его на сайт.
+  Важно, чтобы порядок вариантов совпадал с порядком фотографий.
+-->
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  document.addEventListener('change', function (event) {
+    const input = event.target;
+    const product = input.closest('.js-product');
+
+    if (!product) return;
+
+    let index = -1;
+
+    // Выбор варианта через стандартный выпадающий список Tilda
+    if (input.matches('.js-product-edition-option-variants')) {
+      index = input.selectedIndex;
+    }
+
+    // Выбор варианта через кастомный список Tilda
+    if (input.matches('.t-product__option-input')) {
+      const optionGroup = input.closest('.js-product-edition-option');
+
+      if (!optionGroup) return;
+
+      const options = Array.from(
+        optionGroup.querySelectorAll('.t-product__option-input')
+      );
+
+      index = options.indexOf(input);
+    }
+
+    if (index < 0) return;
+
+    // Переключаем галерею на фотографию выбранного варианта
+    const imageButton = product.querySelector(
+      '.t-slds__thumbsbullet[data-slide-bullet-for="' + (index + 1) + '"]'
+    );
+
+    if (imageButton) {
+      imageButton.click();
+    }
+  });
+});
+</script>
